@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ass : Caio S. S.</title>
+        <title>Carta de Amor para Anna Clara | Caio S.S</title>
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="title" content="Ass : Caio S. S.">
-        <meta name="description" content="UAss : Caio S. S.">
+        <meta name="title" content="Carta de Amor para Anna Clara | Caio S.S">
+        <meta name="description" content="Uma carta de amor especial para Anna Clara Costa Mariani">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js"></script>
@@ -16,27 +16,30 @@
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
             body {
-                font-family: 'Inter', sans-serif;
-                background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+                font-family: 'Lora', serif;
+                background: linear-gradient(135deg, #fce7f3 0%, #fecdd3 50%, #fcd34d 100%);
                 background-attachment: fixed;
                 overflow: hidden;
+                color: #4a044e;
             }
 
             h1, h2, h3, h4, h5, h6 {
                 margin: 0;
-                font-family: 'Dancing Script', cursive;
+                font-family: 'Playfair Display', serif;
+                color: #be185d;
             }
 
             #message-container {
-                background-color: #fff;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-                border-radius: 15px;
-                border: 1px solid #f8c8dc;
+                background-color: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 10px 30px rgba(190, 24, 93, 0.3), 0 0 80px rgba(255, 255, 255, 0.6);
+                border-radius: 20px;
+                border: 2px solid rgba(244, 114, 182, 0.6);
                 position: relative;
                 transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+                backdrop-filter: blur(8px);
             }
 
             #message-container::before {
@@ -46,8 +49,8 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(135deg, rgba(255, 220, 255, 0.3) 0%, rgba(252, 182, 159, 0.1) 100%);
-                border-radius: 15px;
+                background: linear-gradient(135deg, rgba(254, 205, 211, 0.2) 0%, rgba(248, 113, 113, 0.05) 100%);
+                border-radius: 18px;
                 z-index: -1;
             }
 
@@ -64,54 +67,95 @@
             .heart {
                 position: absolute;
                 animation: fall linear forwards;
-                opacity: 0.6;
+                opacity: 0.7;
+                filter: drop-shadow(0 0 5px rgba(244, 114, 182, 0.4));
             }
 
             @keyframes fall {
                 0% {
-                    transform: translateY(-10vh) rotate(0deg);
+                    transform: translateY(-10vh) rotate(0deg) scale(0.8);
                     opacity: 0;
                 }
                 10% {
-                    opacity: 0.6;
+                    opacity: 0.7;
                 }
                 100% {
-                    transform: translateY(100vh) rotate(360deg);
+                    transform: translateY(100vh) rotate(360deg) scale(1.2);
                     opacity: 0;
                 }
             }
 
             #solid-heart {
-                filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+                filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.7));
                 cursor: pointer;
                 transform-origin: center;
-                transition: transform 0.3s ease;
+                transition: transform 0.3s ease, filter 0.3s ease;
             }
 
             #solid-heart:hover {
-                transform: scale(1.2);
+                transform: scale(1.3);
+                filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.9));
             }
 
-            .prose h1, .prose h2, .prose h3 {
-                color: #e83e8c;
+            .prose h1 {
+                color: #be185d;
+                font-size: 2.2rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+                font-family: 'Dancing Script', cursive;
+                font-weight: 700;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            }
+
+            .prose h2, .prose h3 {
+                color: #be185d;
+                font-family: 'Playfair Display', serif;
             }
 
             .prose strong {
-                color: #e83e8c;
+                color: #be185d;
                 font-weight: 700;
+            }
+
+            .prose p {
+                font-size: 1.1rem;
+                line-height: 1.9;
+                margin-bottom: 1.2rem;
+            }
+
+            .prose ul {
+                list-style-type: none;
+                padding-left: 1rem;
+            }
+
+            .prose ul li {
+                position: relative;
+                padding-left: 1.5rem;
+                margin-bottom: 0.8rem;
+                line-height: 1.6;
+            }
+
+            .prose ul li::before {
+                content: '❤️';
+                position: absolute;
+                left: 0;
+                top: 0;
             }
 
             #message {
                 font-size: 1.1rem;
                 line-height: 1.8;
+                padding: 1rem;
             }
             
             .signature {
                 font-family: 'Dancing Script', cursive;
-                font-size: 1.5rem;
-                color: #e83e8c;
+                font-size: 1.8rem;
+                color: #be185d;
                 text-align: right;
-                margin-top: 1rem;
+                margin-top: 2rem;
+                font-weight: 700;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             }
             
             .heart-container {
@@ -124,47 +168,170 @@
             }
             
             @keyframes heartBeat {
-                0% { transform: scale(1); }
-                14% { transform: scale(1.3); }
-                28% { transform: scale(1); }
-                42% { transform: scale(1.3); }
-                70% { transform: scale(1); }
+                0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
+                14% { transform: scale(1.3); filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8)); }
+                28% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
+                42% { transform: scale(1.3); filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8)); }
+                70% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.6)); }
             }
             
             .decoration {
                 position: absolute;
                 font-size: 1.5rem;
-                color: rgba(232, 62, 140, 0.2);
+                color: rgba(190, 24, 93, 0.15);
                 z-index: -1;
+                animation: float 3s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0); }
+            }
+
+            .backdrop {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at center, rgba(252, 231, 243, 0.8) 0%, rgba(254, 205, 211, 0.5) 50%, rgba(252, 211, 77, 0.3) 100%);
+                z-index: -2;
+            }
+
+            .prose a {
+                color: #db2777;
+                text-decoration: none;
+                border-bottom: 1px dotted #db2777;
+                transition: all 0.3s ease;
+            }
+
+            .prose a:hover {
+                color: #9d174d;
+                border-bottom: 1px solid #9d174d;
+            }
+
+            /* Foto Polaroid */
+            .polaroid {
+                background: white;
+                padding: 1rem;
+                padding-bottom: 3rem;
+                box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+                transform: rotate(-3deg);
+                transition: all 0.35s ease;
+                margin: 2rem auto;
+                max-width: 80%;
+                position: relative;
+            }
+
+            .polaroid:hover {
+                transform: scale(1.02) rotate(0deg);
+                box-shadow: 0 0.8rem 1.5rem rgba(0,0,0,0.2);
+            }
+
+            .polaroid img {
+                max-width: 100%;
+                border: 1px solid #f7f7f7;
+            }
+
+            .polaroid::after {
+                content: 'Anna & Caio';
+                position: absolute;
+                bottom: 1rem;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-family: 'Dancing Script', cursive;
+                font-size: 1.2rem;
+                color: #be185d;
+            }
+
+            /* Animações no scroll */
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.7s ease;
+            }
+
+            .visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Papel de carta */
+            .paper-texture {
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23be185d' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+                background-attachment: fixed;
+            }
+
+            /* Envelope */
+            .envelope-icon {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 2.5rem;
+                color: #be185d;
+                filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+                z-index: 10;
+            }
+
+            /* Perfume scent effect visual */
+            .scent-line {
+                position: absolute;
+                width: 30px;
+                height: 100px;
+                border-radius: 50%;
+                background: radial-gradient(circle at center, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0) 70%);
+                pointer-events: none;
+                z-index: -1;
+                animation: rise 7s infinite ease-out;
+                opacity: 0;
+            }
+
+            @keyframes rise {
+                0% { transform: translateY(0) scale(0.5); opacity: 0; }
+                20% { opacity: 0.7; }
+                100% { transform: translateY(-200px) scale(2); opacity: 0; }
             }
         </style>
 
         <script src="js/script.js"></script>
     </head>
     <body>
+        <div class="backdrop paper-texture"></div>
         <div class="falling-hearts"></div>
         
         <div class="flex justify-center items-center flex-col w-full h-screen">
             <div id="message-container" class="flex-col items-center hidden h-0 overflow-y-hidden max-h-[80vh] w-[90%] max-w-[600px] p-8 shadow-xl">
+                <div class="envelope-icon">
+                    <i class="fa-solid fa-envelope-open-heart"></i>
+                </div>
+                
                 <div class="w-full mb-auto mt-auto relative">
-                    <!-- Decorations inside the message -->
-                    <div class="decoration" style="top: -10px; left: 20px;">❤️</div>
-                    <div class="decoration" style="bottom: -10px; right: 20px;">❤️</div>
-                    <div class="decoration" style="top: 40%; left: -15px;">💘</div>
-                    <div class="decoration" style="top: 30%; right: -15px;">💖</div>
+                    <!-- Decorações dentro da mensagem -->
+                    <div class="decoration" style="top: -10px; left: 20px; animation-delay: 0.5s;">❤️</div>
+                    <div class="decoration" style="bottom: -10px; right: 20px; animation-delay: 1.2s;">❤️</div>
+                    <div class="decoration" style="top: 40%; left: -15px; animation-delay: 0.8s;">💘</div>
+                    <div class="decoration" style="top: 30%; right: -15px; animation-delay: 0.3s;">💖</div>
+                    <div class="decoration" style="bottom: 25%; left: 30px; animation-delay: 1.5s;">💕</div>
+                    
+                    <!-- Efeito de perfume (visual) -->
+                    <div class="scent-line" style="top: 50%; left: 20%; animation-delay: 0.5s;"></div>
+                    <div class="scent-line" style="top: 30%; right: 20%; animation-delay: 2s;"></div>
+                    <div class="scent-line" style="top: 70%; left: 40%; animation-delay: 3.5s;"></div>
                     
                     <article id="message" class="prose prose-lg max-w-none"></article>
                 </div>
             </div>
 
             <div class="heart-container mt-6 animate__animated animate__pulse animate__infinite">
-                <p class="text-center mb-2 text-pink-700 font-semibold animate__animated animate__fadeIn animate__delay-1s">Clique no coração</p>
                 <i id="solid-heart" class="fa-solid fa-heart fa-beat fa-3x" style="color: #ff0066;"></i>
             </div>
         </div>
         
         <div class="absolute bottom-4 right-4 text-pink-800 text-sm font-semibold">
-            Feito com ❤️ para o meu amor, Anna Clara Costa Mariani.
+            Feito com meu ❤️ (Caio S. S) para Anna Clara Costa Mariani.
         </div>
     </body>
 </html>
