@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ass : Caio S. S.</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="title" content="Ass : Caio S. S.">
+        <meta name="description" content="UAss : Caio S. S.">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.2/markdown-it.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;700&display=swap');
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+                background-attachment: fixed;
+                overflow: hidden;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                margin: 0;
+                font-family: 'Dancing Script', cursive;
+            }
+
+            #message-container {
+                background-color: #fff;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                border-radius: 15px;
+                border: 1px solid #f8c8dc;
+                position: relative;
+                transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+
+            #message-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, rgba(255, 220, 255, 0.3) 0%, rgba(252, 182, 159, 0.1) 100%);
+                border-radius: 15px;
+                z-index: -1;
+            }
+
+            .falling-hearts {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .heart {
+                position: absolute;
+                animation: fall linear forwards;
+                opacity: 0.6;
+            }
+
+            @keyframes fall {
+                0% {
+                    transform: translateY(-10vh) rotate(0deg);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 0.6;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+
+            #solid-heart {
+                filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+                cursor: pointer;
+                transform-origin: center;
+                transition: transform 0.3s ease;
+            }
+
+            #solid-heart:hover {
+                transform: scale(1.2);
+            }
+
+            .prose h1, .prose h2, .prose h3 {
+                color: #e83e8c;
+            }
+
+            .prose strong {
+                color: #e83e8c;
+                font-weight: 700;
+            }
+
+            #message {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+            
+            .signature {
+                font-family: 'Dancing Script', cursive;
+                font-size: 1.5rem;
+                color: #e83e8c;
+                text-align: right;
+                margin-top: 1rem;
+            }
+            
+            .heart-container {
+                position: relative;
+                z-index: 10;
+            }
+            
+            .heart-beat {
+                animation: heartBeat 1.5s infinite;
+            }
+            
+            @keyframes heartBeat {
+                0% { transform: scale(1); }
+                14% { transform: scale(1.3); }
+                28% { transform: scale(1); }
+                42% { transform: scale(1.3); }
+                70% { transform: scale(1); }
+            }
+            
+            .decoration {
+                position: absolute;
+                font-size: 1.5rem;
+                color: rgba(232, 62, 140, 0.2);
+                z-index: -1;
+            }
+        </style>
+
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div class="falling-hearts"></div>
+        
+        <div class="flex justify-center items-center flex-col w-full h-screen">
+            <div id="message-container" class="flex-col items-center hidden h-0 overflow-y-hidden max-h-[80vh] w-[90%] max-w-[600px] p-8 shadow-xl">
+                <div class="w-full mb-auto mt-auto relative">
+                    <!-- Decorations inside the message -->
+                    <div class="decoration" style="top: -10px; left: 20px;">❤️</div>
+                    <div class="decoration" style="bottom: -10px; right: 20px;">❤️</div>
+                    <div class="decoration" style="top: 40%; left: -15px;">💘</div>
+                    <div class="decoration" style="top: 30%; right: -15px;">💖</div>
+                    
+                    <article id="message" class="prose prose-lg max-w-none"></article>
+                </div>
+            </div>
+
+            <div class="heart-container mt-6 animate__animated animate__pulse animate__infinite">
+                <p class="text-center mb-2 text-pink-700 font-semibold animate__animated animate__fadeIn animate__delay-1s">Clique no coração</p>
+                <i id="solid-heart" class="fa-solid fa-heart fa-beat fa-3x" style="color: #ff0066;"></i>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-4 right-4 text-pink-800 text-sm font-semibold">
+            Feito com ❤️ para o meu amor, Anna Clara Costa Mariani.
+        </div>
+    </body>
+</html>
